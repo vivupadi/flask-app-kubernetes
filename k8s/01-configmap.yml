@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: taskmanager
+  labels:
+    app: taskmanager
+data:
+  #Application Settings
+  APP_NAME: 'DevOps Task Manager'
+  APP_ENV: 'production'
+  DEBUG: 'False'
+  PORT: '5000'
+
+  #Database connection
+  DATABASE_HOST: 'postgres-service.taskmanager.svc.cluster.local'
+  DATABASE_PORT: '5432'
+  DATABASE_NAME: 'taskdb'
+  DATABASE_USER: 'taskuser'
+
+  #REdis connection
+  REDIS_HOST: 'redis-service.taskmanager.svc.cluster.local'
+  REDIS_PORT: '6379'
