@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-service
+  namespace: taskmanager
+  labels:
+    app: flask
+spec:
+  selector:
+    app: flask
+  ports:
+  - port: 80
+    targetPort: 5000
+    protocol: TCP
+    name: http
+  type: NodePort  # For Oracle Cloud access
